@@ -1,8 +1,12 @@
-import { combineReducers } from 'redux'
+import { createStore, combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import todos from './todos'
 
-const todoApp = combineReducers({
-  todos
+const rootReducer = combineReducers({
+  todos,
+  form: formReducer
 })
 
-export default todoApp
+const store = createStore(rootReducer)
+
+export default store
