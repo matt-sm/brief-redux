@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AddTodoForm from './AddTodoForm'
-import TodoList from './TodoList'
+import AddTodoForm from './todo/AddTodoForm'
+import TodoList from './todo/TodoList'
 import { addTodo } from '../actions'
 import { connect } from 'react-redux'
 import { reduxForm } from 'redux-form'
-
+import WizardForm from './wizard/WizardForm'
 
 const App = ({handleTodoSubmit, values, todos}) => {
   return (
@@ -17,6 +17,7 @@ const App = ({handleTodoSubmit, values, todos}) => {
       </div>
       <AddTodoForm onSubmit={values => handleTodoSubmit(values.name)}/>
       <TodoList todos={todos}/>
+      <WizardForm />
     </div>
   )
 }

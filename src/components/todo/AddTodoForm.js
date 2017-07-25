@@ -1,27 +1,8 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import renderField from '../shared/renderField'
 
 const required = value => (value ? undefined : 'Required')
-
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error }
-}) =>
-  <div>
-    <label>
-      {label}
-    </label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched &&
-        (error &&
-          <span>
-            {error}
-          </span>)}
-    </div>
-  </div>
 
 let AddTodoForm = ({ handleSubmit }) => {
   return (
